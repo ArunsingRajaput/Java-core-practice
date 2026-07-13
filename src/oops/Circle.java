@@ -1,10 +1,9 @@
 package oops;
 
-public class Circle {
+public class Circle extends Shape {
     double radius;
-
+    @Override
     double area(){
-//        return 3.14 * radius * radius;
         return Math.PI * radius * radius;
     }
     public static void main(String[] args){

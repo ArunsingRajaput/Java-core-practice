@@ -6,13 +6,14 @@ public class Cat extends Animal {
         super.eat();
         System.out.println("eating");
     }
-    void sound() {
-        System.out.println("Cat is Meows");
-    }
+//    void sound() {
+//        System.out.println("Cat is Meows");
+//    }
+    
     public static void main(String[] args){
-        Cat c = new Cat();
+        Animal c = new Cat();
         c.eat();
-        c.sound();
+//        c.sound();
     }
 }
 

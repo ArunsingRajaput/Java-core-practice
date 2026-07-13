@@ -4,13 +4,13 @@ public class Student {
     String name;
     int age;
 
-    Student(){
+    public Student(){
         name = "Arun";
         age = 21;
         System.out.println("Student object created.");
     }
 
-    void display(){
+    public void display(){
         System.out.println("Name : "+name);
         System.out.println("Age : "+age);
     }

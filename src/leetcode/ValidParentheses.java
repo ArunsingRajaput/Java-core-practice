@@ -7,28 +7,21 @@ public class ValidParentheses {
 
         for(int i=0;i<s.length();i++){
             char ch = s.charAt(i);
-            if (ch == '(' ) {
-                parentheses.push(ch);
-            } else if (ch == '[') {
-                parentheses.push(ch);
-            } else if (ch == '{') {
+            if (ch == '(' || ch == '[' || ch == '{') {
                 parentheses.push(ch);
             } else {
                 if (parentheses.empty()) {
                     return false;
                 } else {
                     if (ch == ']') {
-                        if(parentheses.peek() == '[') {
-                            parentheses.pop();
-                        }
+                        if(parentheses.peek() == '[') parentheses.pop();
+                        else  return false;
                     } else if (ch == ')'){
-                        if(parentheses.peek() == '(') {
-                            parentheses.pop();
-                        }
+                        if(parentheses.peek() == '(') parentheses.pop();
+                        else return false;
                     } else if (ch == '}'){
-                        if(parentheses.peek() == '{') {
-                            parentheses.pop();
-                        }
+                        if(parentheses.peek() == '{') parentheses.pop();
+                        else return false;
                     } else {
                         return false;
                     }
@@ -36,14 +29,12 @@ public class ValidParentheses {
             }
         }
 
-        if(parentheses.empty()){
-            return true;
-        }
+        if(parentheses.empty()) return true;
 
         return false;
     }
     public static void main(String[] args){
-        String s ="({{[](){[]}}()})";
+        String s ="(]";
         ValidParentheses vp = new ValidParentheses();
         boolean ans = vp.isValid(s);
         System.out.println(ans);

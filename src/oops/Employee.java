@@ -16,6 +16,10 @@ public class Employee {
         System.out.println();
     }
 
+    void work() {
+        System.out.println("Employee is Working");
+    }
+
     public static void main(String[] args){
         Employee e1 = new Employee();
         Employee e2 = new Employee();
